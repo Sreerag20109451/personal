@@ -14,7 +14,7 @@ import {FaJava, FaPython} from "react-icons/fa";
 import {TbApi} from "react-icons/tb";
 
 export default function SkillTabs() {
-    const [isVertical, setIsVertical] = React.useState(true);
+    const [isVertical, setIsVertical] = React.useState(false);
 
     return (
         <div className="flex flex-col px-4">
