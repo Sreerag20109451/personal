@@ -6,6 +6,48 @@
 .raleway-1{
     font-family: "Raleway", serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
     font-style: normal;
   }
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(40px); /* Matches translate-y-10 */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%); /* Matches translate-y-10 */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%); /* Matches translate-y-10 */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation */
+.animate-load {
+    animation: slideIn 0.7s ease-out 0.2s forwards; /* duration + delay */
+}
+.animate-left {
+    animation: slideInLeft 0.7s ease-out 0.2s forwards; /* duration + delay */
+}
+.animate-right {
+    animation: slideInRight 0.7s ease-out 0.2s forwards; /* duration + delay */
+}

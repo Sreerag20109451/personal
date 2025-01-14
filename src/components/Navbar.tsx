@@ -1,7 +1,8 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
 import { useState } from "react";
 import { FiAlignCenter } from "react-icons/fi";
 import "../index.css"
+import {ThemeToggler} from "./ThemeToggler.tsx";
 
 
 export default function NavbarComponent() {
@@ -20,24 +21,24 @@ const OpenContent = () =>{
         <Navbar className="md:hidden" >
         <NavbarContent className="sm:flex flex-col gap-4" justify="start">
         <NavbarItem>
-          <Link href="#"  className="text-xl text-slate-500 font-bold">
+          <a href="/education"  className="text-xl text-slate-500 font-bold">
             Education
-          </Link>
+          </a>
         </NavbarItem>
         <NavbarItem>
-          <Link  href="#" className="text-xl text-slate-500 font-bold">
+          <a  href="/experiences" className="text-xl text-slate-500 font-bold">
             Experience
-          </Link>
+          </a>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className="text-xl text-slate-500 font-bold">
+          <a href="/projects" className="text-xl text-slate-500 font-bold">
             Project
-          </Link>
+          </a>
         </NavbarItem>
          <NavbarItem>
-          <Link href="#" className="text-xl text-slate-500 font-bold">
+          <a href="/about" className="text-xl text-slate-500 font-bold">
             About
-          </Link>
+          </a>
         </NavbarItem>
       </NavbarContent> 
         </Navbar>
@@ -51,7 +52,7 @@ const OpenContent = () =>{
     <section>
     <Navbar shouldHideOnScroll>
         <NavbarBrand className="hidden md:block ">
-        <p className="text-inherit text-3xl raleway-1">Sreerag Sathian</p>
+            <a href="/"><p className="text-inherit text-3xl raleway-1">Sreerag Sathian</p></a>
         </NavbarBrand>
      <NavbarBrand className="md:hidden flex flex-col gap-y-2" >
         <FiAlignCenter onClick={isOpenContent}/> 
@@ -60,28 +61,33 @@ const OpenContent = () =>{
 </div>
 } 
     </NavbarBrand>
-      <NavbarContent className="hidden sm:flex md:flex-row gap-4" justify="end">
+      <NavbarContent className="hidden sm:flex md:flex-row gap-4" justify="center">
         <NavbarItem>
-          <Link href="#"  className="text-xl text-slate-500  font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl">
+          <a href="/education"  className="text-xl text-slate-500  font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl dark:hover:text-slate-300">
             Education
-          </Link>
+          </a>
         </NavbarItem>
         <NavbarItem>
-          <Link  href="#" className="text-xl text-slate-500 font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl">
-            Experience
-          </Link>
+          <a  href="/experiences" className="text-xl text-slate-500 font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl dark:hover:text-slate-300">
+            Experiences
+          </a>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className="text-xl text-slate-500 font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl">
-            Project
-          </Link>
+          <a href="/projects" className="text-xl text-slate-500 font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl dark:hover:text-slate-300">
+            Projects
+          </a>
         </NavbarItem>
          <NavbarItem>
-          <Link href="#" className="text-xl text-slate-500 font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl">
+          <a href="/about" className="text-xl text-slate-500 font-mono  transition ease-in-out hover:scale-110 hover:text-slate-950 hover:shadow-2xl dark:hover:text-slate-300">
             About
-          </Link>
+          </a>
         </NavbarItem>
       </NavbarContent>
+        <NavbarContent justify="end">
+            <NavbarItem>
+                <ThemeToggler/>
+            </NavbarItem>
+        </NavbarContent>
       
     </Navbar>
   

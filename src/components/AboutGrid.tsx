@@ -1,20 +1,21 @@
 import {Divider} from "@nextui-org/react";
-
-export default function App() {
+import SkillTabs from "./SkillTabs.tsx";
+import LanguageTable from "./LanguageTable.tsx";
+export default function AboutGrid() {
     return (
-        <div className="max-w-md">
-        <div className="space-y-1">
-        <h4 className="text-medium font-medium">NextUI Components</h4>
-    <p className="text-small text-default-400">Beautiful, fast and modern React UI library.</p>
-    </div>
-    <Divider className="my-4" />
-    <div className="flex h-5 items-center space-x-4 text-small">
-        <div>Blog</div>
-        <Divider orientation="vertical" />
-        <div>Docs</div>
-        <Divider orientation="vertical" />
-        <div>Source</div>
-        </div>
-        </div>
-);
+
+        <section className="flex flex-col justify-center items-center">
+            <section id="skills" className="flex flex-col justify-start items-start">
+                <h1 className="text-slate-700 text-5xl">Technical Skills</h1>
+                <Divider className="my-4"/>
+                <SkillTabs/>
+                <h1 className="text-slate-700 text-5xl mt-8">Languages</h1>
+                <Divider className="my-4"/>
+                <LanguageTable/>
+
+
+            </section>
+
+        </section>
+    );
 }

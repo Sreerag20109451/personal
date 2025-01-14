@@ -1,33 +1,48 @@
-import {Button} from "@nextui-org/react";
+import {Button, Tooltip} from "@nextui-org/react";
 import {FaGithub} from "react-icons/fa";
+import {IoIosLink} from "react-icons/io";
+import ht from "../assets/img.png"
+import {SiKotlin, SiPostgresql, SiTypescript} from "react-icons/si";
+import {RiVuejsFill} from "react-icons/ri";
 
-interface  ProjectProps  {
 
-    name: string,
-    url: string | null
-    description : string
-    imageUrl : string
 
-}
-
-export default  function ProjectCards ({name,url,description,imageUrl}:ProjectProps){
+export default  function HealthTrackerCard () {
 
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+
+        <div className="card bg-base-100 h-1/2 w-96 shadow-xl dark:shadow-white dark:shadow-md">
+            <figure>
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    className="rounded-xl"/>
+                    src={ht}
+                    alt="Health Tracker"/>
             </figure>
-            <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
-                {imageUrl != null && <p>{url}</p>}
-                <p>{description}</p>
-                <div className="card-actions">
-                    <Button size="lg" variant="solid"><FaGithub/> Check in git hub</Button>
+            <div className="card-body">
+                <h2 className="card-title text-slate-950">
+                    Health Tracker!
+                    <div className="badge badge-secondary">new</div>
+                </h2>
+                <p className="text-slate-950">A health tracker application, that can be used to track health, activities and generate Report</p>
+                <div className="card-actions justify-end">
+                    <Tooltip size="lg" content="Kotlin" color="foreground">
+                        <div className="badge badge-outline transition hover:scale-150 ease-in-out dark:bg-slate-700">
+                            <SiKotlin/></div>
+                    </Tooltip>
+                    <Tooltip size="lg" content="VueJS" color="foreground">
+                    <div className="badge badge-outline transition hover:scale-150 ease-in-out dark:bg-slate-700"><RiVuejsFill/></div>
+                    </Tooltip>
+                        <Tooltip size="lg" content="TypeScript" color="foreground">
+                    <div className="badge badge-outline transition hover:scale-150 ease-in-out dark:bg-slate-700"><SiTypescript/></div>
+                        </Tooltip>
+                    <Tooltip size="lg" content="PostgreSQL" color="foreground">
+                        <div className="badge badge-outline transition hover:scale-150 ease-in-out dark:bg-slate-700"><SiPostgresql/></div>
+                    </Tooltip>
+                </div>
+                <div className="card-actions mt-4">
+                <a><Button size="lg" variant="solid" color="primary" className=" transition hover:scale-110 ease-in-out"><FaGithub/> Get Github</Button></a>
+                    <a><Button size="lg" variant="solid" color="primary"  className=" transition hover:scale-110 ease-in-out" ><IoIosLink/> Get Web</Button></a>
                 </div>
             </div>
         </div>
     )
-]
+}
